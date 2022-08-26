@@ -1,0 +1,9 @@
+jsonschema
+graphene
+requests
+sqlalchemy
+psycopg2
+graphene_sqlalchemy
+graphql-server-core
+ariadne
+uvicorn
