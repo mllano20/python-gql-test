@@ -47,7 +47,8 @@ class Comment(base):
     name = Column(String)
     email = Column(String)
     body = Column(String)
-
+    createdAt = Column(String)
+    
     def to_dict(self):
         return {
             "id": self.id,
@@ -55,4 +56,5 @@ class Comment(base):
             "post_id": self.postId,
             "body": self.body,
             "email": self.email
+            "created_at": self.createdAt
         }
