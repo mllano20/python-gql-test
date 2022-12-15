@@ -49,6 +49,7 @@ class Comment(base):
     body = Column(String)
     createdAt = Column(String)
     updatedAt = Column(String)
+    updatedBy = Column(String)
     
     def to_dict(self):
         return {
@@ -59,4 +60,5 @@ class Comment(base):
             "email": self.email,
             "created_at": self.createdAt,
             "updated_at": self.updatedAt,
+            "updated_by": self.updatedBy,
         }
