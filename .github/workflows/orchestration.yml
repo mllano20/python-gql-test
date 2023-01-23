@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Merge
         run:  |
-          echo "PR_URL=$(gh pr create -R mllano20/python-gql-test -H ${{ inputs.sourceEnv }} -B ${{ inputs.targetEnv }} --title 'Release/${{ inputs.sourceEnv }} to ${{ inputs.targetEnv }}' --body 'Created by Github action')"
+          PR_URL=$(gh pr create -R mllano20/python-gql-test -H ${{ inputs.sourceEnv }} -B ${{ inputs.targetEnv }} --title 'Release/${{ inputs.sourceEnv }} to ${{ inputs.targetEnv }}' --body 'Created by Github action')
           gh pr merge -R mllano20/python-gql-test $PR_URL -m 
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
