@@ -1,5 +1,9 @@
 name: Test workflow
-on: push
+on: 
+  push:
+    branches:
+      - dev
+      - qa
 jobs:
   test-job:
     runs-on: ubuntu-20.04

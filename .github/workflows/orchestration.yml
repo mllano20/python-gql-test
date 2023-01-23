@@ -1,0 +1,41 @@
+name: orchestration
+on:
+  workflow_dispatch:
+    inputs:
+      sourceEnv:
+        description: 'Source environment'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - qa
+        - staging
+        - prod
+      targetEnv:
+        description: 'Target environment to release'
+        required: true
+        default: 'qa'
+        type: choice
+        options:
+        - qa
+        - staging
+        - prod
+        - comptia
+jobs:  
+  merge:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Merge
+        run:  |
+          echo "PR_URL=$(gh pr create -R mllano20/python-gql-test -H ${{ inputs.sourceEnv }} -B ${{ inputs.targetEnv }} --title 'Release/${{ inputs.sourceEnv }} to ${{ inputs.targetEnv }}' --body 'Created by Github action')"
+          gh pr merge -R mllano20/python-gql-test $PR_URL -m 
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+      - name: Wait for tests to succeed
+        uses: lewagon/wait-on-check-action@v1.2.0
+        with:
+          ref: qa
+          check-name: Test workflow
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 20
