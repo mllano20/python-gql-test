@@ -48,6 +48,7 @@ class Comment(base):
     email = Column(String)
     body = Column(String)
     createdAt = Column(String)
+    updatedAt = Column(String)
     
     def to_dict(self):
         return {
