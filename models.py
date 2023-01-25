@@ -58,4 +58,5 @@ class Comment(base):
             "body": self.body,
             "email": self.email,
             "created_at": self.createdAt,
+            "updated_at": self.updatedAt,
         }
