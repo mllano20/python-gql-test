@@ -57,4 +57,5 @@ class Comment(base):
             "post_id": self.postId,
             "body": self.body,
             "email": self.email,
-            "created_at": self.createdAt,}
+            "created_at": self.createdAt,
+        }
