@@ -18,7 +18,7 @@ post_schema = {
     "required": [
         "title",
         "body",
-        "userId"
+        "userId",
     ]
 }
 
