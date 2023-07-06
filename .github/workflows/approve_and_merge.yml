@@ -1,0 +1,19 @@
+name: Approve and Merge Downmerge PR
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Approve and merge Downmerge PR
+        id: approve_and_merge
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.FT_MACHINE_SKYNET_TOKEN }}
+          script: |
+            const script = require('./scripts/approve_and_merge.js')
+            const data =  await script({github, context})
+            return data
