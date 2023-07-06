@@ -2,10 +2,6 @@ on:
   check_suite:
     types: [completed]
 
-on:
-  check_suite:
-    types: [completed]
-
 jobs:
   create-pull-request:
     runs-on: ubuntu-latest
