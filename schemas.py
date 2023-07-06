@@ -40,6 +40,7 @@ put_schema = {
         }
     },
     "required": [
-        "id"
+        "id",
+        "title",
     ]
 }
