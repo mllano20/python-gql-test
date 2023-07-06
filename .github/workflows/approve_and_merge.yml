@@ -1,3 +1,4 @@
+name: Approve and Merge Downmerge PR
 on:
   check_suite:
     types: [completed]
