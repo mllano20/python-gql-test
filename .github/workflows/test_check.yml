@@ -4,9 +4,10 @@ on:
   check_suite:
     types: [completed]
 
-  test-job:
-    runs-on: ubuntu-20.04
-    steps:
-      - name: read config
-        shell: bash
-        run: echo "Hello it ran!"
+  jobs:
+    test-job:
+      runs-on: ubuntu-20.04
+      steps:
+        - name: read config
+          shell: bash
+          run: echo "Hello it ran!"
