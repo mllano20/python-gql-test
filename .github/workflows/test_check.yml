@@ -1,0 +1,14 @@
+name: Test check
+
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-20.04
+    steps:
+
+      - name: data
+        run: echo "${{toJson(github)}}"
+        
