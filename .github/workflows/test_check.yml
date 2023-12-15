@@ -1,8 +1,10 @@
 name: Check test 1
 
 on:
-  check_suite:
-    types: [completed]
+  workflow_run:
+    workflows: [Test workflow]
+    types:
+      - completed
 
 jobs:
   other-job:
@@ -15,4 +17,7 @@ jobs:
 
       - name: data
         run: echo "${{toJson(github)}}"
+      
+      - name: event
+        run: echo "${{toJson(github.event.workflow_run)}}"
         
