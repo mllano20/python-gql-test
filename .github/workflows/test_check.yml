@@ -4,9 +4,14 @@ on:
   check_suite:
     types: [completed]
 
-  test-job:
+jobs:
+  other-job:
     runs-on: ubuntu-20.04
     steps:
-      - name: read config
+      - name: test echo
         shell: bash
         run: echo "Hello it ran!"
+
+      - name: data
+        run: echo "${{toJson(github)}}"
+        
