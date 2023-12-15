@@ -1,0 +1,17 @@
+name: Test check
+
+on:
+  check_suite:
+    types: [completed]
+
+jobs:
+  other-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: test echo
+        shell: bash
+        run: echo "Hello it ran!"
+
+      - name: data
+        run: echo "${{toJson(github)}}"
+        
