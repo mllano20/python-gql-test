@@ -8,6 +8,7 @@ jobs:
   other-job:
     runs-on: ubuntu-20.04
     steps:
+
       - name: test echo
         shell: bash
         run: echo "Is running now"
