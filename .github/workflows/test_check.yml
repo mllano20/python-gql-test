@@ -8,7 +8,10 @@ jobs:
   test-job:
     runs-on: ubuntu-20.04
     steps:
-
+      - name: read config
+        shell: bash
+        run: echo "Hello it ran!"
+        
       - name: data
         run: echo "${{toJson(github)}}"
         
