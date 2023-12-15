@@ -1,4 +1,4 @@
-name: Test check
+name: Check test 1
 
 on:
   check_suite:
