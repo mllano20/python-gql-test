@@ -2,7 +2,7 @@ name: Check test 1
 
 on:
   check_suite:
-    types: [completed]
+    types: [completed, requested]
 
 jobs:
   other-job:
