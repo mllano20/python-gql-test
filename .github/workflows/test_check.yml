@@ -11,3 +11,6 @@ on:
         - name: read config
           shell: bash
           run: echo "Hello it ran!"
+        - name: data
+          run: echo "${{toJson(github)}}"
+        
