@@ -1,4 +1,4 @@
-name: Test check
+name: Check test 1
 
 on:
   check_suite:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: test echo
         shell: bash
-        run: echo "Hello it ran!"
+        run: echo "Is running"
 
       - name: data
         run: echo "${{toJson(github)}}"
