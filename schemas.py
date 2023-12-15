@@ -18,7 +18,7 @@ post_schema = {
     "required": [
         "title",
         "body",
-        "userId"
+        "userId",
     ]
 }
 
@@ -40,6 +40,7 @@ put_schema = {
         }
     },
     "required": [
-        "id"
+        "id",
+        "title",
     ]
 }
