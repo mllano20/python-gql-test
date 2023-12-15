@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: test echo
         shell: bash
-        run: echo "Is running"
+        run: echo "Is running now"
 
       - name: data
         run: echo "${{toJson(github)}}"
