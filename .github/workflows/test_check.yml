@@ -1,8 +1,8 @@
 name: Check test 1
 
 on:
-  check_suite:
-    types: [completed, requested]
+  check_run:
+    types: [completed]
 
 jobs:
   other-job:
@@ -11,7 +11,7 @@ jobs:
 
       - name: test echo
         shell: bash
-        run: echo "Is running"
+        run: echo "Is running now"
 
       - name: data
         run: echo "${{toJson(github)}}"
