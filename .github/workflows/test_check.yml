@@ -1,16 +1,16 @@
-name: Test workflow
+name: Test check
 
 on:
-  pull_request
+  check_suite:
+    types: [completed]
 
 jobs:
   test-job:
     runs-on: ubuntu-20.04
     steps:
-
-      - name: checkout git repo
-        uses: actions/checkout@v2
-
       - name: read config
         shell: bash
         run: echo "Hello it ran!"
+      - name: data
+        run: echo "${{toJson(github)}}"
+        
