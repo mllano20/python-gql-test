@@ -20,6 +20,3 @@ jobs:
       
       - name: event
         run: echo "${{toJson(github.event.workflow_run)}}"
-        
-      - name: context
-        run: echo "${{toJson(context.payload.workflow_run)}}"
