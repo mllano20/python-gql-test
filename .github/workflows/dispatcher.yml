@@ -1,4 +1,4 @@
-name: Manual trigger deploy release
+name: Manual trigger
 on:
   workflow_dispatch:
     inputs:

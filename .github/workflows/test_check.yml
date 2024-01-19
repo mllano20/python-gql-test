@@ -2,7 +2,7 @@ name: Check test 1
 
 on:
   workflow_run:
-    workflows: [Test workflow, Test Push, Test dispatch]
+    workflows: [Test workflow, Test Push, Test dispatch,Manual trigger]
     types:
       - completed
 
