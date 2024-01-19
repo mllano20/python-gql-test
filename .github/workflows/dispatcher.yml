@@ -1,0 +1,20 @@
+name: Manual trigger deploy release
+on:
+  workflow_dispatch:
+    inputs:
+      target-env:
+        description: 'Target environment to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - staging
+        - prod
+
+jobs:
+  deploy-app:
+    uses: ./.github/workflows/test_dispatch.yml
+    secrets: inherit
+    with:
+      environment: ${{ inputs.target-env }}
