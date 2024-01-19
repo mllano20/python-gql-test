@@ -1,0 +1,17 @@
+name: Test dispatch
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: false
+        default: 'dev'
+        type: string
+
+jobs:
+  test-job-push:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: read config
+        shell: bash
+        run: echo "Hello it ran!"
