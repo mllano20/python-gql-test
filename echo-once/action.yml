@@ -7,6 +7,7 @@ inputs:
     required: true
 runs:
   using: "composite"
-  shell: bash
   steps:
-    - run: echo "${{ inputs.message }}"
+    - name: Echo once
+      shell: bash
+      run: echo "${{ inputs.message }}"
