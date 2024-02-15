@@ -17,4 +17,5 @@ runs:
       with:
         message: "${{ inputs.message }}"
     - name: Unlink the action repository
+      shell: bash
       run: rm -f .github
