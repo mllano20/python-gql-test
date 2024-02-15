@@ -1,0 +1,11 @@
+name: 'Test message echo once'
+description: 'Test message'
+author: 'mllano'
+inputs:
+  message:
+    description: "Message to echo"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: echo "${{ inputs.message }}"
