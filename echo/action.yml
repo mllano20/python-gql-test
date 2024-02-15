@@ -8,7 +8,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-    - uses: ./echo-once
+    - name: Symlink current action repo
+      env:
+        action_path: ${{ github.action_path }}
+      run: ln -fs ${{ env.action_path }}/.. .github/.action_repo.my-cool-repo
+      shell: bash
+    - uses: ./.github/.action_repo.my-cool-repo/echo-once
       with:
         message: "${{ inputs.message }}"
+    - name: Unlink the action repository
+      run: rm -f .github/.action_repo.my-cool-repo
+      shell: bash
